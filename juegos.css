@@ -1,0 +1,194 @@
+/*Estilos Juegos*/
+.main {
+    background-image: url(./media/Background\ 2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Games Containers*/
+.games {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50%;
+}
+
+.games1, .games2 {
+    align-items: center;
+}
+
+
+/*Games*/
+.game1 {
+    background-image: url('./media/Game\ 1.jpeg');
+}
+
+.game2 {
+    background-image: url(./media/Game\ 2.jpg);
+}
+
+.game3 {
+    background-image: url(./media/Game\ 3.jpeg);
+}
+
+.game4 {
+    background-image: url(./media/Game\ 4.png);
+}
+
+.game5 {
+    background-image: url(./media/Game\ 5.jpeg);
+}
+
+.game6 {
+    background-image: url(./media/Game\ 6.jpg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Loading animation*/
+@keyframes bounce {
+    0%,
+    100% {
+      translate: 0px 36px;
+    }
+    50% {
+      translate: 0px 46px;
+    }
+}
+@keyframes bounce2 {
+    0%,
+    100% {
+      translate: 0px 46px;
+    }
+    50% {
+      translate: 0px 56px;
+    }
+}
+  
+@keyframes umbral {
+    0% {
+      stop-color: #d3a5102e;
+    }
+    50% {
+      stop-color: rgba(211, 165, 16, 0.519);
+    }
+    100% {
+      stop-color: #d3a5102e;
+    }
+}
+@keyframes partciles {
+    0%,
+    100% {
+      translate: 0px 16px;
+    }
+    50% {
+      translate: 0px 6px;
+    }
+}
+#particles {
+    animation: partciles 4s ease-in-out infinite;
+}
+#animatedStop {
+    animation: umbral 4s infinite;
+}
+#bounce {
+    animation: bounce 4s ease-in-out infinite;
+    translate: 0px 36px;
+}
+#bounce2 {
+    animation: bounce2 4s ease-in-out infinite;
+    translate: 0px 46px;
+    animation-delay: 0.5s;
+}
+ 
+
+/*Games*/
+.card {
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    width: 15%;
+    height: 73%;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+   
+.card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+}
+   
+.card-info {
+    --color: #181818;
+    background-size: cover; 
+    background-position: center; 
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+}
+   
+.card .title {
+    font-weight: bold;
+    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: .1em;
+    
+    z-index: -1;
+
+    text-align: center;
+}
+   
+/*Hover*/
+.card:hover::after {
+    opacity: 0;
+}
+   
+.card:hover .card-info {
+    color: #3d0055;
+    transition: color 1s;
+}
+
+.card:hover p {
+    transition: 1s;
+    z-index: 1;
+}
+   
+
+
+/*Responsive*/
+@media screen and (min-width: 767px) and (max-width: 1365px) {
+    .card .title {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1365px) {
+    .card .title {
+        font-size: 20px;
+    }
+}
